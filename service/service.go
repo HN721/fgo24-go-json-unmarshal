@@ -6,6 +6,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"strings"
 )
 
 type Datas struct {
@@ -37,6 +38,6 @@ func Service() {
 		log.Fatal(err)
 	}
 	for _, Datas := range Datas {
-		fmt.Printf("Name: %s\nEmail: %s\nCompany: %s\n\n", Datas.Name, Datas.Email, Datas.Company.Name)
+		fmt.Printf("Name: %s\nEmail: %s\nCompany: %s\n\n", strings.ToLower(Datas.Name), strings.ToLower(Datas.Email), strings.ToLower(Datas.Company.Name))
 	}
 }
